@@ -12,11 +12,10 @@
 	// 4.  Remove the following line from the file AssemblyInfo.cs (usually located in the "Property" folder inside your C# project):
 	//        [assembly: AssemblyVersion("1.0.0.0")]
 	// 5.  Add the following to the PreBuild steps:
-	//		set textTemplatingPath="%CommonProgramFiles(x86)%\Microsoft Shared\TextTemplating\$(VisualStudioVersion)\texttransform.exe"
 	//
-	//		if %textTemplatingPath%=="\Microsoft Shared\TextTemplating\$(VisualStudioVersion)\texttransform.exe" set textTemplatingPath="%CommonProgramFiles%\Microsoft Shared\TextTemplating\$(VisualStudioVersion)\texttransform.exe"
-	//
-	//		%textTemplatingPath% "$(ProjectDir)AssemblyFileVersion.tt"
+	// set textTemplatingPath="%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\Common7\IDE\texttransform.exe"
+	// %textTemplatingPath% "$(ProjectDir)AssemblyVersion.tt"
+
 
     int major = 0; 
     int minor = 0; 	
