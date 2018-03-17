@@ -41,7 +41,7 @@
 # 5:ModuleManager
 
 # 6:mod_id
-6:1272
+#6:1272
 
 # 7: AdditionalFolders in the GameData, 1 per line
 # Special case if files are in the GameData directory itself
@@ -49,7 +49,7 @@
 #7:ConnectedLivingSpace
 
 # 8: AdditionalMods to include
-8:ConnectedLivingSpace
+#8:ConnectedLivingSpace
 
 #
 # End of file
