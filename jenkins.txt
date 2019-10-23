@@ -4,6 +4,7 @@
 # 0     KSP version, if not the current
 # 1     Mod install directory, version file to use when building zip file
 # 2     Project definitions
+# 2c    Compiler options and flags
 # 3     Files to copy, source, dest
 # 4     Directory to copy, sourcedir, destdir
 # 5     Add ModuleManager to GameData
