@@ -14,7 +14,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace HaystackReContinued
+namespace (replace with namespace)
 {
     [KSPAddon(KSPAddon.Startup.Instantly, true)]
     internal class Startup : MonoBehaviour
@@ -40,8 +40,8 @@ namespace HaystackReContinued
     [KSPAddon(KSPAddon.Startup.MainMenu, true)]
     internal class InstallChecker : MonoBehaviour
     {
-        private const string MODNAME = "Haystack Continued";
-        private const string FOLDERNAME = "HaystackContinued";
+        private const string MODNAME = "replace with mod name, semicolon "
+        private const string FOLDERNAME = "replace with folder name, semicolon"
         private const string EXPECTEDPATH = FOLDERNAME + "/Plugins";
 
         protected void Start()

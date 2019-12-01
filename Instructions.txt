@@ -68,6 +68,12 @@ located in the "Properties" folder inside your C# project):
 Add the following to the Pre-build event command line.  This line is based on
 using Visual Studio 2017, installed on the X drive:
 
+New version of this, environment agnostic:
+
+	"$(DevEnvDir)\texttransform.exe" "$(ProjectDir)AssemblyVersion.tt"
+
+
+Older version
 
 	set textTemplatingPath="%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Community\Common7\IDE\texttransform.exe"
 
@@ -108,10 +114,46 @@ Right-click on the SolutionItems folder, and select "Add -> Existing item...",
 add the two files just copied and the .version file
 
 
+Development Environment Configuration
+=====================================
+The development environment requires specifying where your KSP install is. It
+is *highly recommended* to use a separate development install instead of your
+main playthrough install.
+
+KSP Install Location
+--------------------
+You can specify your KSP install location in 2 ways:
+1. Set the **KSPDIR** environment variable.  Recommended if you are using
+	these build scripts for multiple mods
+2. Set up a name.Common.props.template file
+	a.  Copy the **solutionName.Common.props.template** file to
+		"solutionName.Common.props" in the top level directory of the mod
+	b.	Change the name of the file to the name of the mod
+	c.	Edit it accordingly.  There are three examples, all commented out, 
+		of setting the KSPDIR variable
+
 
 Add the following to the Post-build event command line, replace the "xxxxx"
 with the complete path to the top level directory of the mod:
 
+This newer version is more environment agnostic
+
+	set KSPDIR=$(KSPDIR)
+
+	IF "%KSPDIR%"=="" (
+
+		ECHO Configuration error - KSPDIR not specified in project.
+
+		ECHO Either set KSPDIR environment variable or edit BetterLoadSaveGame.Common.props
+		PAUSE
+		GOTO DONE
+	)
+	start /D $(SolutionDir) /WAIT deploy.bat  $(TargetDir) $(TargetFileName)
+	if $(ConfigurationName) == Release (	
+		start /D $(SolutionDir) /WAIT buildRelease.bat $(TargetDir) $(TargetFileName)
+
+
+The following is the older version:
 
 	start /D xxxxx /WAIT deploy.bat  $(TargetDir) $(TargetFileName)
 
