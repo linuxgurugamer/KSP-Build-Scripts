@@ -7,3 +7,7 @@ Includes the following:
 	buildRelease.bat
 	Instructions.txt
 
+Folder: Debugger
+	Contains a Bash script for using under CygWin or Linux to build a 
+	debugging environment
+
