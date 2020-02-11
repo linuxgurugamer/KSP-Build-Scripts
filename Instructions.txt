@@ -151,9 +151,13 @@ This newer version is more environment agnostic
 		GOTO DONE
 
 	)
+
 	start /D $(SolutionDir) /WAIT deploy.bat  $(TargetDir) $(TargetFileName)
+
 	if $(ConfigurationName) == Release (	
+
 		start /D $(SolutionDir) /WAIT buildRelease.bat $(TargetDir) $(TargetFileName)
+
 	)
 
 
